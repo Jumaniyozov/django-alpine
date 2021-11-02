@@ -6,11 +6,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <script defer src="{% static 'js/bundle.js' %}"></script>
 
     <title>Document</title>
   </head>
   <body>
+    <div
+      x-data="{
+    open: false
+  }"
+    >
+      <button @click="open = !open">Click</button>
+      <div class="modal" x-bind:class="{close: open}">Visible</div>
+    </div>
+
     <div x-data="dropdown">
       <button @click="toggle">Expand</button>
 
